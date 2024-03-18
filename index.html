@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="hardcore-style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="radio-inputs">
+        <label class="radio">
+          <input type="radio" name="radio" checked="" />
+          <span class="name">Normal</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="radio" />
+          <span class="name">Hardcore</span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new">🔄 New game</button>
+      <button class="btn btn--how">❓ How to play</button>
+      <button class="btn btn--roll">🎲 Roll dice</button>
+      <button class="btn btn--hold">📥 Hold</button>
+    </main>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>How To Play 😊</h1>
+      <p>
+        The Pig Game is a fun and simple dice game for two players. The goal of
+        the game is to be the first player to reach 100 points. Here’s how it
+        works:
+      </p>
+      <br />
+      <ul>
+        <li>Players take turns to roll a single die.</li>
+        <li>
+          In each turn, a player rolls the die as many times as they wish. Each
+          result gets added to their turn total.
+        </li>
+        <li>
+          But be careful! If a player rolls a 1, their turn total is lost, and
+          it becomes the other player’s turn.
+        </li>
+        <li>
+          At any time during a player’s turn, they can choose to “hold”, which
+          means their turn total is added to their score, and it becomes the
+          other player’s turn.
+        </li>
+        <li>The first player to reach or exceed 100 points is the winner.</li>
+      </ul>
+      <br />
+      <p>
+        Remember, strategy plays a big part in this game. You must decide when
+        to keep rolling and when to hold and pass the turn to your opponent.
+        Good luck and have fun playing the Pig Game!
+      </p>
+    </div>
+    <div class="modal hardcore hidden">
+      <button class="close-modal">&times;</button>
+      <h1>How To Play 💀</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+        quisquam accusamus illum sint quas, quaerat earum id delectus, unde
+        eligendi debitis. Facilis quasi ducimus assumenda soluta repellat
+        deleniti, incidunt, vel nisi amet quibusdam libero. Totam fugiat nihil
+        eum quos mollitia dolor quaerat facere tenetur nam sit nobis minus
+        suscipit accusantium debitis, a temporibus natus exercitationem quo quod
+        iure, architecto facilis. Perspiciatis, nam sapiente! Numquam voluptas,
+        possimus, ut quae voluptatibus aliquam omnis repellat nihil architecto
+        laboriosam sint provident corporis totam earum. Quasi repellendus
+        recusandae laudantium fuga architecto fugiat laborum a corporis sed eum
+        quaerat tempore non, accusantium facere, voluptatum magni soluta!
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
