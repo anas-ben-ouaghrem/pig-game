@@ -196,6 +196,12 @@ main {
   margin-bottom: 2rem;
 }
 
+.modal h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #c7365f;
+}
+
 .modal p,
 .modal ul {
   font-size: 1.8rem;

@@ -56,6 +56,11 @@ btnRoll.addEventListener('click', function () {
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
+      // Hardcore mode: if the player rolls a 1, their total score is reset
+      if (document.body.classList.contains('hardcore')) {
+        scores[activePlayer] = 0; // Reset the player's total score
+        document.getElementById(`score--${activePlayer}`).textContent = 0;
+      }
       // Switch to next player
       switchPlayer();
     }
@@ -88,7 +93,7 @@ btnHold.addEventListener('click', function () {
 });
 
 // Resetting the game
-btnNew.addEventListener('click', function () {
+const resetGame = function () {
   gameStarted = false;
   btnHowToPlay.classList.remove('hidden');
   playing = true;
@@ -105,7 +110,10 @@ btnNew.addEventListener('click', function () {
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
   diceEl.classList.add('hidden');
-});
+};
+
+// Attach resetGame to the new game button
+btnNew.addEventListener('click', resetGame);
 
 // How to play modal
 const openModal = function () {
@@ -139,11 +147,13 @@ const hardcoreModeRadio = document.querySelector(
 normalModeRadio.addEventListener('change', function () {
   if (this.checked) {
     document.body.classList.remove('hardcore');
+    resetGame();
   }
 });
 
 hardcoreModeRadio.addEventListener('change', function () {
   if (this.checked) {
     document.body.classList.add('hardcore');
+    resetGame();
   }
 });
