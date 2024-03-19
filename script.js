@@ -127,3 +127,23 @@ document.addEventListener('keydown', function (e) {
     if (!modal.classList.contains('hidden')) closeModal();
   }
 });
+
+// Radio buttons
+const normalModeRadio = document.querySelector(
+  '.radio-inputs label:first-child input'
+);
+const hardcoreModeRadio = document.querySelector(
+  '.radio-inputs label:last-child input'
+);
+
+normalModeRadio.addEventListener('change', function () {
+  if (this.checked) {
+    document.body.classList.remove('hardcore');
+  }
+});
+
+hardcoreModeRadio.addEventListener('change', function () {
+  if (this.checked) {
+    document.body.classList.add('hardcore');
+  }
+});

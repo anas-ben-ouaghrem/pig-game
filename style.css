@@ -21,11 +21,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10rem;
 }
 
 /* LAYOUT */
 main {
   position: relative;
+  justify-self: center;
   width: 100rem;
   height: 60rem;
   background-color: rgba(255, 255, 255, 0.35);
@@ -224,6 +226,8 @@ main {
 .radio-inputs {
   position: relative;
   display: flex;
+  top: 0;
+  right: 0;
   flex-wrap: wrap;
   border-radius: 0.5rem;
   background-color: #eee;
@@ -257,6 +261,282 @@ main {
 }
 
 .radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+.hardcore * {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.hardcore html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body.hardcore {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #ccc;
+  background-image: linear-gradient(to top left, #000 0%, #333 100%) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+/* LAYOUT */
+.hardcore main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.hardcore .player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.hardcore .name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+.hardcore .score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+
+.hardcore .player--active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hardcore .player--active .hardcore .name {
+  font-weight: 700;
+}
+.hardcore .player--active .hardcore .score {
+  font-weight: 400;
+}
+
+.hardcore .player--active .hardcore .current {
+  opacity: 1;
+}
+
+.hardcore .current {
+  background-color: #c7365f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.hardcore .current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.hardcore .current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.hardcore .btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.hardcore .btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.hardcore .btn--new {
+  top: 4rem;
+}
+.hardcore .btn--roll {
+  top: 39.3rem;
+}
+.hardcore .btn--hold {
+  top: 46.1rem;
+}
+
+.hardcore .btn--how {
+  top: 11rem;
+}
+
+.hardcore .btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.hardcore .btn:focus {
+  outline: none;
+}
+
+.hardcore .dice {
+  position: absolute;
+  left: 50%;
+  top: 19.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.hardcore .player--winner {
+  background-color: #2f2f2f;
+}
+
+.hardcore .player--winner .hardcore .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.hardcore .hidden {
+  display: none;
+}
+
+.hardcore .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ccc;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.hardcore .modal .hardcore h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal p,
+.hardcore .modal .hardcore ul {
+  font-size: 1.8rem;
+}
+
+.hardcore .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hardcore .close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* RADIO INPUTS */
+
+.hardcore .radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem 2rem;
+  margin: 1rem 5rem;
+  gap: 2rem;
+  width: auto;
+}
+
+.hardcore .radio-inputs .hardcore .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.hardcore .radio-inputs .hardcore .radio .hardcore input {
+  display: none;
+}
+
+.hardcore .radio-inputs .hardcore .radio .hardcore .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: #222;
+  transition: all 0.15s ease-in-out;
+}
+
+.hardcore
+  .radio-inputs
+  .hardcore
+  .radio
+  .hardcore
+  input:checked
+  .hardcore
+  + .hardcore
+  .name {
   background-color: #fff;
   font-weight: 600;
 }
